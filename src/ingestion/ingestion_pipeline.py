@@ -40,7 +40,8 @@ def load_documents(docs_path=None):
         print(f"Content Preview : {doc.page_content[:100]}...")
         print(f"metadata : {doc.metadata}")
         
-    print(document)
+    # print(document)
+
     return document
     
 
