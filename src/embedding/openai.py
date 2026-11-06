@@ -3,6 +3,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 import os
+from langchain_community.embeddings import FastEmbedEmbeddings
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 DEFAULT_DOCS_PATH = os.path.join(PROJECT_ROOT, "database")
@@ -18,9 +19,13 @@ def create_vector_store(chunks,persist_directory="chromadb"):
     #         model_name="sentence-transformers/all-MiniLM-L6-v2"
     #     )
     
-    embedding_model = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
+    # embedding_model = HuggingFaceEmbeddings(
+    #         model_name="sentence-transformers/all-MiniLM-L6-v2"
+    #     )
+
+    embedding_model = FastEmbedEmbeddings(
+        model_name="BAAI/bge-small-en-v1.5"
+    )
 
     print("creating vector store")
     vectorstore = Chroma.from_documents(

@@ -5,3 +5,7 @@ __pycache__/
 venv/
 
 .env
+
+.sqlite3
+
+chromadb/

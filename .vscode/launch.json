@@ -2,10 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: main.py",
+      "name": "Ingestion",
       "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/main.py",
+      "args": [
+        "--mode",
+        "ingestion"
+      ],
+      "python": "${workspaceFolder}/venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Retrieval",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "args": [
+        "--mode",
+        "retrieval",
+        "--query",
+        "in which year tesla build the roadster?"
+      ],
       "python": "${workspaceFolder}/venv/Scripts/python.exe",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
