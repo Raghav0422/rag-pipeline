@@ -27,7 +27,7 @@
         "--mode",
         "retrieval",
         "--query",
-        "in which year tesla build the roadster?"
+        "in which year microsoft was build?"
       ],
       "python": "${workspaceFolder}/venv/Scripts/python.exe",
       "cwd": "${workspaceFolder}",

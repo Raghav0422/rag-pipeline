@@ -17,7 +17,7 @@ def main():
     )
     parser.add_argument(
         "--query",
-        default="in which year tesla build the roadster?",
+        default="in which year microsoft was build?",
         help="Question to use in retrieval mode",
     )
     args = parser.parse_args()
@@ -30,8 +30,10 @@ def main():
         print("Calling creation for vector store")
         vectorestore = create_vector_store(chunks)
     elif args.mode == "retrieval":
-        query = " when google was founded?"
-        retrival_section(query)
+        query = args.query or " when google was founded?"
+        relevant_docs = retrival_section(query)
+        from src.llm.llm import get_llm
+        llm_response = get_llm(query, relevant_docs)
     else:
         print("Invalid mode. Please specify 'ingest' or 'query'.")
 

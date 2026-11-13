@@ -2,6 +2,7 @@ from langchain_chroma import Chroma
 from langchain_community.embeddings import FastEmbedEmbeddings
 
 persistent_directory = "chromadb"
+setup_pg_vector = True
 
 embedding_model = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
@@ -30,9 +31,11 @@ def retrival_section(query):
 
     relevant_docs = retriever.invoke(query)
 
-    print(f"Query: {query}")
-    print(f"Context")
+    # print(f"Query: {query}")
+    # print(f"Context")
 
-    for i , doc in enumerate(relevant_docs,1):
-        print(f"Document {i+1}: {doc.page_content}")
+    # for i , doc in enumerate(relevant_docs,1):
+    #     print(f"Document {i+1}: {doc.page_content}")
+
+    return relevant_docs
 
