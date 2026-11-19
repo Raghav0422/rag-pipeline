@@ -6,4 +6,6 @@ venv/
 
 .env
 
-chromadb
+chromadb/
+*.sqlite3
+True/
