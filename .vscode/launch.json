@@ -2,39 +2,49 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Ingestion",
+      "name": "query",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/main.py",
+      // "program": "${workspaceFolder}/main.py",
+      "module": "uvicorn",
       "args": [
-        "--mode",
-        "ingestion"
+        "main:app",
+        "--reload",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
       ],
       "python": "${workspaceFolder}/venv/Scripts/python.exe",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "justMyCode": true,
       "env": {
-        "PYTHONPATH": "${workspaceFolder}"
+        "PYTHONPATH": "${workspaceFolder}",
+        "APP_MODE" : "query"        
       }
     },
     {
-      "name": "Retrieval",
+      "name": "inegst",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/main.py",
+      // "program": "${workspaceFolder}/main.py",
+      "module": "uvicorn",
       "args": [
-        "--mode",
-        "retrieval",
-        "--query",
-        "in which year microsoft was build?"
+        "main:app",
+        "--reload",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
       ],
       "python": "${workspaceFolder}/venv/Scripts/python.exe",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "justMyCode": true,
       "env": {
-        "PYTHONPATH": "${workspaceFolder}"
+        "PYTHONPATH": "${workspaceFolder}",
+        "APP_MODE" : "ingest"        
       }
     }
   ]
