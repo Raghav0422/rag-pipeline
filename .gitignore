@@ -9,3 +9,7 @@ venv/
 .sqlite3
 
 chromadb/
+
+.vscode/
+launch.json
+settings.json
