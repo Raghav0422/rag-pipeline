@@ -1,3 +1,5 @@
+import argparse
+
 from src.ingestion.ingestion_pipeline import load_documents
 from src.chunking.flat_chunking import split_documents
 from src.embedding.openai import create_vector_store, creating_embedding_model

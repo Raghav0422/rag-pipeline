@@ -6,6 +6,10 @@ venv/
 
 .env
 
+.sqlite3
+
 chromadb/
-*.sqlite3
-True/
+
+.vscode/
+launch.json
+settings.json
